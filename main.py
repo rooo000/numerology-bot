@@ -3,7 +3,7 @@ import json
 import gspread
 import logging
 from aiogram import Bot, Dispatcher, types
-from aiogram.utils import executor
+import asyncio
 from oauth2client.service_account import ServiceAccountCredentials
 
 # Настройки логирования
@@ -45,4 +45,4 @@ async def about_bot(message: types.Message):
 
 # Запуск бота
 if __name__ == "__main__":
-    executor.start_polling(dp, skip_updates=True)
+    asyncio.run(dp.start_polling(bot))
